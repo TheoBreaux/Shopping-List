@@ -1,30 +1,18 @@
-// select addButton Icon
-const addButtons = document.querySelectorAll('.add');
-// select subtract button icon
-const subButtons = document.querySelectorAll('.remove');
+let itemQty = document.getElementsByClassName("item-qty");
+let subtractBtn = document.getElementsByClassName("subtract-btn");
+let addBtn = document.getElementsByClassName("add-btn");
+let cartTotal = document.getElementById("cart-total");
 
-//  select span
-let totalQty = document.querySelector('.total-quantity');
-
-// select the span value
-let totalQuantity = parseInt(totalQty.innerText);
-
-// loop through and add event listener to all button icons
-for (let i = 0; i < addButtons.length; i++) {
-  addButtons[i].addEventListener('click', function () {
-    totalQty.innerText = totalQuantity++;
-  })
-}
-
-// loop through and add event listener to subtract button icons
-for (let i = 0; i < subButtons.length; i++) {
-  subButtons[i].addEventListener('click', function () {
-    if (totalQuantity > 0) {
-      totalQuantity--;
-      totalQty.innerText = totalQuantity;
+for (let i = 0; i < itemQty.length; i++) {
+  Number(itemQty[i].innerText);
+  subtractBtn[i].addEventListener("click", () => {
+    if (itemQty[i].innerText > 0) {
+      itemQty[i].innerText--
+      cartTotal.innerText--;
     }
   })
+  addBtn[i].addEventListener("click", () => {
+    itemQty[i].innerText++
+    cartTotal.innerText++;
+  })
 }
-
-
-// item 3 -5
