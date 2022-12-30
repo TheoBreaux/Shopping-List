@@ -10,9 +10,9 @@ for (let i = 0; i < itemQty.length; i++) {
       itemQty[i].innerText--
       cartTotal.innerText--;
     }
-  })
+  });
   addBtn[i].addEventListener("click", () => {
     itemQty[i].innerText++
     cartTotal.innerText++;
-  })
+  });
 }
